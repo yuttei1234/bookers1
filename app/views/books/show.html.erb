@@ -1,21 +1,13 @@
-
-<p>
-<strong>Title: </strong>
-<%= @book.title %>
-</p>
-
+<% flash.each do |message_type, message| %>
+  <%= content_tag :div, message, class: message_type %>
 <% end %>
 
-<p>
-<strong>Body: </strong>
-<%= @book.body %>
-</p>
 
-<% end %>
+<h3>Title:</h3>
+<p><%= @book.title %></p>
 
-<p>
-<%= link_to "Edit", edit_book_path(@book.id) %>
+<h3>Body:</h3>
+<p><%= @book.body %></p>
+
+<%= link_to "Edit", edit_book_path %>
 <%= link_to "Back", books_path %>
-</p>
-
-<% end %>
