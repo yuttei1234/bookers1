@@ -1,6 +1,4 @@
-<h1>
-  <Strong>Editing Book</Strong>
-</h1>
+<h1>Editing Book</h1>
 
 <%= form_with model: @book,local true do |f| %>
 
@@ -11,15 +9,21 @@
   <% end %>
 <% end %>
 
+  <div class="text-form">
+    <label>title</label>
+    <%= f.text_field :title %>    
+  </div>
 
-  <h2>title</h2>
-  <%= f.text_field :title %>
+  <div class="text-form">
+  <label>body</label>
+  <%= f.text_area :body %>    
+  </div>
 
-  <h2>body</h2>
-  <%= f.text_area :body %>
+  <div class="text-form">
   <%= f.sbumit 'Update Book' %>
-  
-  <% end %>  
+  </div>
+
+  <% end %>
 
   <%= link_to "Show", book_path(@book.id) %>
   <%= link_to "Back", books_path %>
